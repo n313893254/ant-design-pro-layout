@@ -51,6 +51,7 @@ export interface BaseMenuProps
       defaultDom: React.ReactNode,
     ) => React.ReactNode
   >;
+  menuProps?: MenuProps;
 }
 
 const { SubMenu } = Menu;
@@ -293,7 +294,7 @@ export default class BaseMenu extends Component<BaseMenuProps> {
     if (defaultSelectedKeys === undefined && !selectedKeys.length && openKeys) {
       selectedKeys = [openKeys[openKeys.length - 1]];
     }
-    let props = {};
+    let props = { ...this.props.menuProps };
     if (openKeys && !collapsed && layout === 'sidemenu') {
       props = {
         openKeys: openKeys.length === 0 ? [...selectedKeys] : openKeys,
