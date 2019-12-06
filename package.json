@@ -1,28 +1,7 @@
 {
-  "name": "@ant-design/pro-layout",
-  "version": "4.9.4",
-  "description": "ant-design-pro layout, easy to use pro scaffolding.",
-  "keywords": [
-    "admin",
-    "ant",
-    "ant-design",
-    "ant-design-pro",
-    "antd",
-    "design",
-    "layout",
-    "menu",
-    "pro"
-  ],
-  "homepage": "https://github.com/ant-design/ant-design-pro-layout#readme",
-  "bugs": {
-    "url": "https://github.com/ant-design/ant-design-pro-layout/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ant-design/ant-design-pro-layout"
-  },
-  "license": "MIT",
-  "author": "qixian.cs@outlook.com",
+  "name": "clcos-pro-layout",
+  "version": "4.5.17",
+  "description": "Fork ant-design-pro layout, easy to use pro scaffolding.",
   "files": [
     "/lib",
     "/es"
