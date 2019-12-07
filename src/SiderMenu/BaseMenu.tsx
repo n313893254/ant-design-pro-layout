@@ -176,6 +176,7 @@ export default class BaseMenu extends Component<BaseMenuProps> {
           title={title}
           key={item.key || item.path}
           onTitleClick={item.onTitleClick}
+          popupClassName="subMenu-overflow"
         >
           {this.getNavMenuItems(item.children)}
         </SubMenu>

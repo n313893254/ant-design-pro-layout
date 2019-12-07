@@ -8,9 +8,7 @@ import {
   defaultRenderLogoAndTitle,
 } from '../SiderMenu/SiderMenu';
 
-import BaseMenu from '../SiderMenu/BaseMenu';
 import { HeaderViewProps } from '../Header';
-import { getFlatMenuKeys } from '../SiderMenu/SiderMenuUtils';
 
 export interface TopNavHeaderProps extends SiderMenuProps {
   logo?: React.ReactNode;
@@ -34,7 +32,7 @@ export default class TopNavHeader extends Component<TopNavHeaderProps> {
       className: propsClassName,
       style,
     } = this.props;
-    const flatMenuKeys = getFlatMenuKeys(menuData);
+
     const baseClassName = 'ant-pro-top-nav-header';
     const headerDom = defaultRenderLogoAndTitle(logo, title, menuHeaderRender);
 
@@ -63,11 +61,7 @@ export default class TopNavHeader extends Component<TopNavHeaderProps> {
             </div>
           )}
           <div style={{ flex: 1 }} className={`${baseClassName}-menu`}>
-            <BaseMenu
-              {...this.props}
-              {...this.props.menuProps}
-              flatMenuKeys={flatMenuKeys}
-            />
+            {menuData}
           </div>
           {rightContentRender &&
             rightContentRender({

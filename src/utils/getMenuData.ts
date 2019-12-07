@@ -105,7 +105,7 @@ export default (
   routes: Route[],
   menu?: { locale: boolean },
   formatMessage?: (message: MessageDescriptor) => string,
-  menuDataRender?: (menuData: MenuDataItem[]) => MenuDataItem[],
+  menuDataRender?: any,
 ) => {
   let originalMenuData = memoizeOneFormatter({
     data: routes,
@@ -114,10 +114,7 @@ export default (
       locale: false,
     },
   });
-  if (menuDataRender) {
-    originalMenuData = menuDataRender(originalMenuData);
-  }
-  const menuData = defaultFilterMenuData(originalMenuData);
+  const menuData = menuDataRender;
   // Map type used for internal logic
   // Map 类型用于内部逻辑，为了避免顺序问题
   const breadcrumbMap = memoizeOneGetBreadcrumbNameMap(originalMenuData);

@@ -102,7 +102,7 @@ export interface BasicLayoutProps
   pageTitleRender?: WithFalse<
     (props: GetPageTitleProps, defaultPageTitle?: string) => string
   >;
-  menuDataRender?: (menuData: MenuDataItem[]) => MenuDataItem[];
+  menuDataRender?: any;
   itemRender?: AntdBreadcrumbProps['itemRender'];
 
   formatMessage?: (message: MessageDescriptor) => string;
@@ -274,12 +274,13 @@ const BasicLayout: React.FC<BasicLayoutProps> = props => {
   };
 
   const { routes = [] } = route;
-  const { breadcrumb, breadcrumbMap, menuData } = getMenuData(
+  const { breadcrumb, breadcrumbMap } = getMenuData(
     routes,
     menu,
     formatMessage,
-    menuDataRender,
   );
+
+  const menuData = menuDataRender
 
   // If it is a fix menu, calculate padding
   // don't need padding in phone mode
