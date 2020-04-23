@@ -9,7 +9,7 @@ import { getFlatMenuKeys } from './SiderMenuUtils';
 const SiderMenuWrapper: React.FC<SiderMenuProps> = props => {
   const {
     isMobile,
-    menuData,
+    menuData = [],
     siderWidth,
     collapsed,
     onCollapse,

@@ -126,11 +126,11 @@ export default class BaseMenu extends Component<BaseMenuProps> {
   /**
    * 获得菜单子节点
    */
-  getNavMenuItems = (menusData: MenuDataItem[] = []): React.ReactNode[] =>
-    menusData
-      .filter(item => item.name && !item.hideInMenu)
-      .map(item => this.getSubMenuOrItem(item))
-      .filter(item => item);
+  // getNavMenuItems = (menusData: MenuDataItem[] = []): React.ReactNode[] =>
+  //   menusData
+  //     .filter(item => item.name && !item.hideInMenu)
+  //     .map(item => this.getSubMenuOrItem(item))
+  //     .filter(item => item);
 
   // Get the currently selected menu
   getSelectedMenuKeys = (pathname?: string): string[] => {
@@ -178,7 +178,7 @@ export default class BaseMenu extends Component<BaseMenuProps> {
           onTitleClick={item.onTitleClick}
           popupClassName="subMenu-overflow"
         >
-          {this.getNavMenuItems(item.children)}
+          {/* {this.getNavMenuItems(item.children)} */}
         </SubMenu>
       );
     }
@@ -287,7 +287,6 @@ export default class BaseMenu extends Component<BaseMenuProps> {
       style,
       fixedHeader = false,
       layout = 'sidemenu',
-      menuData,
       selectedKeys: defaultSelectedKeys,
     } = this.props;
     // if pathname can't match, use the nearest parent's key
@@ -318,7 +317,7 @@ export default class BaseMenu extends Component<BaseMenuProps> {
           className={cls}
           getPopupContainer={() => this.getPopupContainer(fixedHeader, layout)}
         >
-          {this.getNavMenuItems(menuData)}
+          {/* {this.getNavMenuItems(menuData)} */}
         </Menu>
         <div ref={this.getRef} />
       </>
