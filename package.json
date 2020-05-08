@@ -1,6 +1,6 @@
 {
   "name": "clcos-pro-layout",
-  "version": "4.5.20",
+  "version": "4.5.21",
   "description": "Fork ant-design-pro layout, easy to use pro scaffolding.",
   "files": [
     "/lib",
