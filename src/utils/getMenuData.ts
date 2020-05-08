@@ -54,6 +54,7 @@ const memoizeOneFormatter = memoizeOne(formatter, isEqual);
 /**
  * filter menuData
  */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const defaultFilterMenuData = (menuData: MenuDataItem[] = []): MenuDataItem[] =>
   menuData
     .filter(item => item && item.name && !item.hideInMenu)
@@ -107,7 +108,7 @@ export default (
   formatMessage?: (message: MessageDescriptor) => string,
   menuDataRender?: any,
 ) => {
-  let originalMenuData = memoizeOneFormatter({
+  const originalMenuData = memoizeOneFormatter({
     data: routes,
     formatMessage,
     menu: menu || {
@@ -120,6 +121,7 @@ export default (
   const breadcrumbMap = memoizeOneGetBreadcrumbNameMap(originalMenuData);
   // Object type used for external users
   // 外部暴露的 breadcrumb 还是 Object 类型
-  const breadcrumb = Object.fromEntries(breadcrumbMap);
+  // const breadcrumb = Object.fromEntries(breadcrumbMap);
+  const breadcrumb = {};
   return { breadcrumb, breadcrumbMap, menuData };
 };
